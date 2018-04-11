@@ -35,8 +35,9 @@ Phrase Phrase::Crossover(Phrase& other) {
 	int pos = 0;
 	
 	while (pos < shorter.length()) {
-		if (rand() % 2)
+		if (rand() % 2){
 			child += shorter[pos];
+		}
 		else child += longer[pos];
 		pos++;
 	}
