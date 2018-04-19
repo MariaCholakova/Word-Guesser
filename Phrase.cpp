@@ -18,12 +18,13 @@ void Phrase::CalculateFitness(string& realPhrase) {
 	int length = this->str.length() < realPhrase.length() ? this->str.length() : realPhrase.length();
 	for (int i = 0; i < length; i++) {
 		if (this->str[i] == realPhrase[i]) {
-			this->fitness += 5;
+			this->fitness += 5;  //if characters match, add 5 points to fitness
 		}
 		else {
-			this->fitness -= 2;
+			this->fitness -= 2;  //if caharacters don't match, take 2 points from fitness
 		}
 	}
+	//take 2 points from fitness for each additional character of the longer phrase
 	this->fitness -= abs((int)this->str.length()- (int)realPhrase.length() ) * 2;
 }
 
